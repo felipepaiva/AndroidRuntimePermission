@@ -43,28 +43,6 @@ public class MainActivity extends AppCompatActivity {
         needToRequestPermission();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     //PERMISSION
     //Just checking if we need to ask for user permissions
     private void needToRequestPermission() {
@@ -102,14 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission was granted, yay! Do the
-                    // contacts-related task you need to do.
+                    // permission was granted!
 
                     Snackbar.make(coordinatorLayout, "User has granted permission to use that feature", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
+                    // permission denied!
 
                     Snackbar.make(coordinatorLayout, "Wow! User denied us to use that!", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
