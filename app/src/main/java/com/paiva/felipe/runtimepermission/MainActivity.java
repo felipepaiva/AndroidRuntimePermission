@@ -1,7 +1,6 @@
 package com.paiva.felipe.runtimepermission;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,10 +11,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     //Just checking if we need to ask for user permissions
     private void needToRequestPermission() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            //News runtime we need to request permission to use some features
+            //New runtime! we need to check / request permission to use some features
             checkPermisssions();
         }else{
             //This case permissions already granted when user installed our app
