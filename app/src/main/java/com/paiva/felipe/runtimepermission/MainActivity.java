@@ -77,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void checkPermisssions() {
-//        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_CONTACTS},
-//      REQUEST_CODE_ASK_PERMISSIONS_CONTACTS);
-
         int hasWriteContactsPermission = ContextCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.WRITE_CONTACTS);
 
@@ -92,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         REQUEST_CODE_ASK_PERMISSIONS_CONTACTS);
             }
         }else{
-            Snackbar.make(coordinatorLayout, "We Receive our permission", Snackbar.LENGTH_LONG)
+            Snackbar.make(coordinatorLayout, "We already have our permission", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
         }
     }
